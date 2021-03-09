@@ -1,0 +1,28 @@
+{
+  "name": "node-red-contrib-msal",
+  "version": "0.0.1",
+  "description": "Login node using msal ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node-red",
+    "msal",
+    "azure"
+  ],
+  "node-red": {
+    "nodes": {
+      "msal-auth": "./msal/msal-auth.js",
+      "msal-config": "./msal/msal-config.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/powerzumsel/node-red-contrib-msal.git"
+  },
+  "dependencies": {
+    "@azure/msal-node": "^1.0.1"
+  },
+  "author": "powerzumsel",
+  "license": "MIT"
+}

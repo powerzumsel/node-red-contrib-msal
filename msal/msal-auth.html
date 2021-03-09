@@ -1,0 +1,43 @@
+<script type="text/javascript">    
+        RED.nodes.registerType('msal-auth', {
+            category: 'network',
+            color: "#35afe8",
+            defaults: {
+                config: {value:"", type:"msal-config", required: true},
+                name: { value: "" },
+                initUrl: { value: "", required: true },
+                redirectUrl: { value: "", required: true },               
+                azurescopes: { value: "", required: true }
+            },
+            inputs: 1,
+            outputs: 1,
+            icon: "white-globe.svg",
+            label: this.name,
+            label: function () {
+                return this.name;
+            }           
+        });      
+</script>
+
+<script type="text/html" data-template-name="msal-auth">
+    <div class="form-row">
+        <label for="node-input-config"><i class="fa fa-tag"></i> Azure App Config</label>
+        <input type="text" id="node-input-config" placeholder="Azure App Config">
+    </div>
+    <div class="form-row">
+        <label for="node-input-initUrl"><i class="fa fa-globe"></i> Init URL</label>
+        <input id="node-input-initUrl" type="text" placeholder="/Login2Azure">
+    </div>	
+    <div class="form-row">
+        <label for="node-input-redirectUrl"><i class="fa fa-globe"></i> Local Redirect URL</label>
+        <input id="node-input-redirectUrl" type="text" placeholder="/redirect">
+    </div>
+    <div class="form-row">
+        <label for="node-input-azurescopes"><i class="fa fa-globe"></i> Scopes</label>
+        <input id="node-input-azurescopes" type="text" placeholder="user.read">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>

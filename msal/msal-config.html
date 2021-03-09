@@ -1,0 +1,33 @@
+<script type="text/javascript">
+    RED.nodes.registerType('msal-config',{
+        category: 'config',
+        defaults: {
+            name: { value: "", required: true },
+            clientId: { value: "", required: true },
+            clientSecret: { value: "", required: true },
+            authority: { value: "", required: true }
+        },
+        label: function () {
+            return this.name;
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="msal-config">
+    <div class="form-row">
+        <label for="node-config-input-name"><i class="fa fa-bookmark"></i> Name</label>
+        <input type="text" id="node-config-input-name" placeholder="friendly name">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-clientId"><i class="fa fa-bookmark"></i> Application (client) ID</label>
+        <input type="text" id="node-config-input-clientId" placeholder="Application (client) ID">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-clientSecret"><i class="fa fa-bookmark"></i> Application (client) Secret</label>
+        <input type="password" id="node-config-input-clientSecret" placeholder="Application (client) Secret">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-authority"><i class="fa fa-bookmark"></i>Authority</label>
+        <input type="text" id="node-config-input-authority" placeholder="Authority">
+    </div>
+</script>
