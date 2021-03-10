@@ -27,22 +27,23 @@ Already registered App on Azure Portal.
 
 ## Usage
 
-This node is using `Redirect Method`  
+This node is using `Redirect Method` of msal  
 Enter:
 
-- `Scopes` :  e.g. **user.read**  
+- `Scopes` :  e.g. **user.read**  or **<https://management.azure.com/.default>**...
 - `Init URL` : Url that will lead to Azure Login: **/login2azure**  
 - `Local Redirect URL` : RedirectUrl that will listen on Azure Login Response: **/redirect**  
 **Note: On Azure Portal you have to add the complete REDIRECT URL !!!  
 Running NR on `http://localhost:1880` then you have to add `http://localhost:1880/redirect` for your app in Azure Portal !  
 This node will patch up the complete REDIRECT URL on its own and pass it to msal!**  
 
-Node will send Response Object
+Node can receive `msg.update = true` object to do a silent renewal of token.  
+Node will send msal processed response object. The included accessToken can be use to trigger http node to do REST call on Azure API  
 
 ## Config Node
 
 - Application (client) ID  
 - Application (client) Secret
-- Authority
+- Authority (`https://login.microsoftonline.com/<tenantId>` or `https://login.microsoftonline.com/common` ...)
 
 ---
